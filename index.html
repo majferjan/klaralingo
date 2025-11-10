@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lingua Mock — Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- LEFT -->
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">💚</div></div>
+      <nav class="side-nav" id="sideNav">
+        <button class="tab active" data-view="home"><span class="tab-icon">🏠</span><span class="tab-label">Learn</span></button>
+        <button class="tab" data-view="practice"><span class="tab-icon">🛠️</span><span class="tab-label">Practice</span></button>
+        <button class="tab" data-view="leaderboards"><span class="tab-icon">🏆</span><span class="tab-label">Leaderboards</span></button>
+        <button class="tab" data-view="quests"><span class="tab-icon">⚡</span><span class="tab-label">Quests</span></button>
+        <button class="tab" data-view="shop"><span class="tab-icon">🛒</span><span class="tab-label">Shop</span></button>
+        <button class="tab" data-view="profile"><span class="tab-icon">👤</span><span class="tab-label">Profile</span></button>
+        <button class="tab" data-view="more"><span class="tab-icon">⋯</span><span class="tab-label">More</span></button>
+      </nav>
+    </aside>
+
+    <!-- CENTER -->
+    <main class="main">
+      <!-- Colored banner -->
+      <div class="section-banner" id="sectionBanner">
+        <div class="sb-left">
+          <button class="back-arrow" id="bannerBack" title="Back">←</button>
+          <div class="sb-text">
+            <div class="sb-sub">SECTION <span id="sectionNumber">1</span>, UNIT <span id="unitNumber">1</span></div>
+            <div class="sb-title" id="sbTitle">Ask questions</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Endless roadmap -->
+      <section id="homeView" class="home">
+        <div class="roadmap-column" id="roadmapColumn"></div>
+      </section>
+
+      <!-- Lesson -->
+      <section id="lessonView" class="hidden lesson-stage">
+        <div class="top-strip">
+          <div class="progress-ghost"></div>
+          <div class="lives">❤ <span id="livesCount">5</span></div>
+        </div>
+
+        <article class="exercise-core">
+          <h2 class="exercise-title" id="exerciseTitle">Select the correct meaning</h2>
+          <div class="avatar-row left">
+            <img id="exerciseAvatar" alt="character" />
+            <div class="bubble" id="exerciseHint">hint</div>
+          </div>
+          <div id="exerciseContainer"></div>
+        </article>
+
+        <div class="lesson-footer">
+          <button class="btn btn-ghost" id="skipBtn">SKIP</button>
+          <button class="btn btn-primary" id="checkBtn" disabled>CHECK</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- RIGHT -->
+    <aside class="rightbar wide">
+        <div class="card">
+            <div class="card-title">Your stats</div>
+                <div class="stats-row" id="statsRow">
+                    <div class="stat">
+                    <img class="stat-icon" src="images/czech.png"  alt="Course" />
+                    </div>
+                    <div class="stat">
+                    <img class="stat-icon" src="images/streak.png" alt="Streak" />
+                    <span class="stat-text"><span id="streakVal">9
+                    </div>
+                    <div class="stat">
+                    <img class="stat-icon" src="images/gem.png"    alt="Gems" />
+                    <span class="stat-text"><span id="gemsVal">39</span>
+                    </div>
+                    <div class="stat">
+                    <img class="stat-icon" src="images/heart.png"  alt="Hearts" />
+                    <span class="stat-text"><span id="livesVal">5</span>
+                    </div>
+                </div>
+            </div>
+      <div class="card">
+        <div class="card-title">Try Super (placeholder)</div>
+        <button class="btn btn-primary small">TRY 1 WEEK FREE</button>
+      </div>
+      <div class="card">
+        <div class="card-title">Daily Quests (placeholder)</div>
+        <ul class="mini-list">
+          <li>Earn 20 XP — 0/20</li>
+          <li>Combo Bonus XP — 0/10</li>
+          <li>Score 80% in 3 lessons — 0/3</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Anchored popover (replaces centered modal) -->
+  <div class="popover hidden" id="practicePopover" role="dialog" aria-modal="true">
+    <div class="popover-card" id="popoverCard">
+      <div class="popover-title" id="popoverTitle">Chapter title</div>
+      <div class="popover-sub" id="popoverSub">Lesson 1 of 6</div>
+      <button class="btn popover-start" id="popoverStart">START +10 XP</button>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
