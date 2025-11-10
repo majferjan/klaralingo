@@ -85,7 +85,7 @@ const RICK = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
 /* ===== Easy knobs ===== */
 const SIZE = {
-  roadmapManHeight: 150,   // man.png next to chapters
+  roadmapManHeight: 250,   // man.png next to chapters
   lessonAvatarHeight: 120, // avatar in lesson
 };
 /* Move the man toward the nodes (negative pulls inward). */
@@ -201,7 +201,7 @@ function renderRoadmap(){
 
     // chapter man.png
     const man = document.createElement("img");
-    man.src = "images/man.png";
+    man.src = "images/klarka1.png";
     man.alt = "";
     man.className = "chapter-man";
     man.style.position = "absolute";
