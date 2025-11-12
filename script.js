@@ -199,7 +199,7 @@ function renderRoadmap(){
     group.style.position = "relative";
     group.style.minHeight = "160px";
 
-    // chapter man.png +1 
+    // chapter man.png 
     const man = document.createElement("img");
     man.src = "images/klarka1.png";
     man.alt = "";
