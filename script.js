@@ -5,11 +5,11 @@
 /* ===== Content ===== */
 const CHAPTERS = [
   {
-    id:"C1", title:"Section 1", chapterTitle:"Use the plural", color:"#2c9cdb", imageId:"C1",
+    id:"C1", title:"Section 1", chapterTitle:"Use the plural", color:"#2c9cdb", imageId:"C1", mascot:"klarka1.png", mascotheight:250,
     units:[
       { id:"U1", title:"Ask questions", completed:false, exercises:[
-        { type:"choice", character:"man.png", hint:"short", prompt:"Select the correct meaning", choices:["krátký","tam","jméno"], correctIndex:0 },
-        { type:"match", character:"man.png", hint:"Connect the words", prompt:"Match the pairs",
+        { type:"choice", character:"friends.png", hint:"short", prompt:"Select the correct meaning", choices:["krátký","tam","jméno"], correctIndex:0 },
+        { type:"match", character:"geralt.png", hint:"Connect the words", prompt:"Match the pairs",
           pairs:[["co","what"],["nebo","or"],["sůl","salt"],["krátký","short"]] }
       ]},
       { id:"U2", title:"Phrases", completed:false, exercises:[
@@ -25,10 +25,10 @@ const CHAPTERS = [
     ],
   },
   {
-    id:"C2", title:"Section 2", chapterTitle:"Past & future", color:"#9c5df9", imageId:"C2",
+    id:"C2", title:"Section 2", chapterTitle:"Past & future", color:"#9c5df9", imageId:"C2", mascot:"klarka2.png", mascotheight:250,
     units:[
       { id:"U5", title:"Past tense 1", completed:false, exercises:[
-        { type:"choice", character:"man.png", hint:"went", prompt:"Select the correct meaning", choices:["šel","jí","spí"], correctIndex:0 }
+        { type:"choice", character:"friends.png", hint:"went", prompt:"Select the correct meaning", choices:["šel","jí","spí"], correctIndex:0 }
       ]},
       { id:"U6", title:"Plans", completed:false, exercises:[
         { type:"choice", character:"man.png", hint:"will", prompt:"Select the correct meaning", choices:["bude","byl","měl"], correctIndex:0 }
@@ -43,7 +43,7 @@ const CHAPTERS = [
     ],
   },
   {
-    id:"C3", title:"Section 3", chapterTitle:"Travel & places", color:"#00c2a8", imageId:"C3",
+    id:"C3", title:"Section 3", chapterTitle:"Travel & places", color:"#00c2a8", imageId:"C3", mascot:"klarkamaj.png", mascotheight:250,
     units:[
       { id:"U9",  title:"Directions", completed:false, exercises:[
         { type:"choice", character:"man.png", hint:"left", prompt:"Select the correct meaning", choices:["vlevo","vpravo","nahoru"], correctIndex:0 }
@@ -61,7 +61,7 @@ const CHAPTERS = [
     ],
   },
   {
-    id:"C4", title:"Section 4", chapterTitle:"Food & ordering", color:"#ff7a59", imageId:"C4",
+    id:"C4", title:"Section 4", chapterTitle:"Food & ordering", color:"#ff7a59", imageId:"C4", mascot:"klarka3.png", mascotheight:250,
     units:[
       { id:"U13", title:"Menu words", completed:false, exercises:[
         { type:"choice", character:"man.png", hint:"soup", prompt:"Select the correct meaning", choices:["polévka","ryba","vejce"], correctIndex:0 }
@@ -86,7 +86,7 @@ const RICK = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 /* ===== Easy knobs ===== */
 const SIZE = {
   roadmapManHeight: 250,   // man.png next to chapters
-  lessonAvatarHeight: 120, // avatar in lesson
+  lessonAvatarHeight: 200, // avatar in lesson
 };
 /* Move the man toward the nodes (negative pulls inward). */
 const CHAPTER_MAN_OFFSET = 150;
@@ -199,9 +199,9 @@ function renderRoadmap(){
     group.style.position = "relative";
     group.style.minHeight = "160px";
 
-    // chapter man.png 
+    // chapter mascot (custom per chapter)
     const man = document.createElement("img");
-    man.src = "images/klarka1.png";
+    man.src = `images/${ch.mascot || "man.png"}`;
     man.alt = "";
     man.className = "chapter-man";
     man.style.position = "absolute";
@@ -209,8 +209,9 @@ function renderRoadmap(){
     man.style.transform = "translateY(-50%)";
     man.onload = () => {
       const ar = man.naturalWidth / man.naturalHeight || 1;
-      man.style.setProperty("height", `${SIZE.roadmapManHeight}px`, "important");
-      man.style.setProperty("width", `${Math.round(SIZE.roadmapManHeight * ar)}px`, "important");
+      const h = ch.mascotHeight || SIZE.roadmapManHeight;
+      man.style.height = h + "px";
+      man.style.width  = Math.round(h * ar) + "px";
     };
     if (group.dataset.side === "left")  man.style.left  = (CHAPTER_MAN_OFFSET + 8) + "px";
     if (group.dataset.side === "right") man.style.right = (CHAPTER_MAN_OFFSET + 8) + "px";
