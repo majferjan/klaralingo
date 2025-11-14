@@ -10,40 +10,50 @@
 <body>
   <div class="app-shell">
     <!-- LEFT -->
-  <aside class="sidebar">
-    <div class="brand"><div class="brand-mark"><img src="images/logo.png" alt="Logo" /></div></div>
-    <nav class="side-nav" id="sideNav">
-      <button class="tab active" data-view="home">
-        <img class="tab-icon" src="images/learn.png" alt="">
-        <span class="tab-label">LEARN</span>
-      </button>
-      <button class="tab" data-view="practice">
-        <img class="tab-icon" src="images/practice.png" alt="">
-        <span class="tab-label">PRACTICE</span>
-      </button>
-      <button class="tab" data-view="leaderboards">
-        <img class="tab-icon" src="images/leaderboards.png" alt="">
-        <span class="tab-label">LEADERBOARDS</span>
-      </button>
-      <button class="tab" data-view="quests">
-        <img class="tab-icon" src="images/quests.png" alt="">
-        <span class="tab-label">QUESTS</span>
-      </button>
-      <button class="tab" data-view="shop">
-        <img class="tab-icon" src="images/shop.png" alt="">
-        <span class="tab-label">SHOP</span>
-      </button>
-      <button class="tab" data-view="profile">
-        <img class="tab-icon" src="images/profile.png" alt="">
-        <span class="tab-label">PROFILE</span>
-      </button>
-      <button class="tab" data-view="more">
-        <img class="tab-icon" src="images/more.png" alt="">
-        <span class="tab-label">MORE</span>
-      </button>
-    </nav>
-  </aside>
-
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">
+          <img src="images/logo.png" alt="Logo" />
+        </div>
+      </div>
+      <nav class="side-nav" id="sideNav">
+        <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer"
+           class="tab" data-view="home" style="text-decoration:none;">
+          <img class="tab-icon" src="images/learn.png" alt="">
+          <span class="tab-label">LEARN</span>
+        </a>
+        <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer"
+           class="tab" data-view="practice" style="text-decoration:none;">
+          <img class="tab-icon" src="images/practice.png" alt="">
+          <span class="tab-label">PRACTICE</span>
+        </a>
+        <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer"
+           class="tab" data-view="leaderboards" style="text-decoration:none;">
+          <img class="tab-icon" src="images/leaderboards.png" alt="">
+          <span class="tab-label">LEADERBOARDS</span>
+        </a>
+        <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer"
+           class="tab" data-view="quests" style="text-decoration:none;">
+          <img class="tab-icon" src="images/quests.png" alt="">
+          <span class="tab-label">QUESTS</span>
+        </a>
+        <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer"
+           class="tab" data-view="shop" style="text-decoration:none;">
+          <img class="tab-icon" src="images/shop.png" alt="">
+          <span class="tab-label">SHOP</span>
+        </a>
+        <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer"
+           class="tab" data-view="profile" style="text-decoration:none;">
+          <img class="tab-icon" src="images/profile.png" alt="">
+          <span class="tab-label">PROFILE</span>
+        </a>
+        <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer"
+           class="tab" data-view="more" style="text-decoration:none;">
+          <img class="tab-icon" src="images/more.png" alt="">
+          <span class="tab-label">MORE</span>
+        </a>
+      </nav>
+    </aside>
 
     <!-- CENTER -->
     <main class="main">
@@ -88,42 +98,82 @@
 
     <!-- RIGHT -->
     <aside class="rightbar wide">
-        <div class="card">
-            <div class="card-title">Your stats</div>
-                <div class="stats-row" id="statsRow">
-                    <div class="stat">
-                    <img class="stat-icon" src="images/czech.png"  alt="Course" />
-                    </div>
-                    <div class="stat">
-                    <img class="stat-icon" src="images/streak.png" alt="Streak" />
-                    <span class="stat-text"><span id="streakVal">9
-                    </div>
-                    <div class="stat">
-                    <img class="stat-icon" src="images/gem.png"    alt="Gems" />
-                    <span class="stat-text"><span id="gemsVal">39</span>
-                    </div>
-                    <div class="stat">
-                    <img class="stat-icon" src="images/heart.png"  alt="Hearts" />
-                    <span class="stat-text"><span id="livesVal">5</span>
-                    </div>
-                </div>
-            </div>
+      <!-- Stats -->
+      <div class="card">
+        <div class="card-title">Your stats</div>
+        <div class="stats-row" id="statsRow">
+          <div class="stat">
+            <img class="stat-icon img-var" style="--img-size:22px" src="images/czech.png" alt="Course" />
+            <span class="stat-text">Czech course</span>
+          </div>
+          <div class="stat">
+            <img class="stat-icon img-var" style="--img-size:22px" src="images/streak.png" alt="Streak" />
+            <span class="stat-text"><span id="streakVal">9</span>-day streak</span>
+          </div>
+          <div class="stat">
+            <img class="stat-icon img-var" style="--img-size:22px" src="images/gem.png" alt="Gems" />
+            <span class="stat-text"><span id="gemsVal">39</span> gems</span>
+          </div>
+          <div class="stat">
+            <img class="stat-icon img-var" style="--img-size:22px" src="images/heart.png" alt="Hearts" />
+            <span class="stat-text"><span id="livesVal">5</span> hearts</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emerald League -->
+      <div class="card league-card">
+        <div class="card-title">
+          <img src="images/league.png" alt="Emerald League" class="league-badge img-var u-size-league">
+          <span>Emerald League</span>
+        </div>
+        <div class="pill">Rank #12 — 3,240 XP</div>
+      </div>
+
+      <!-- Try Super -->
       <div class="card">
         <div class="card-title">Try Super</div>
         <button class="btn btn-primary small">TRY 1 WEEK FREE</button>
       </div>
+
+      <!-- Daily Quests with icons + chests -->
       <div class="card">
         <div class="card-title">Daily Quests</div>
-        <ul class="mini-list">
-          <li>Earn 20 XP — 0/20</li>
-          <li>Combo Bonus XP — 0/10</li>
-          <li>Score 80% in 3 lessons — 0/3</li>
-        </ul>
+
+        <!-- Quest 1 -->
+        <div class="quest-strip">
+          <div class="quest">
+            <img src="images/quest1.png" alt="Quest 1" class="img-var u-size-quest">
+            <span class="quest-label">Earn 20 XP</span>
+            <div class="quest-bar"><div style="width:35%"></div></div>
+          </div>
+          <img src="images/chest.png" alt="Chest 1" class="img-var u-size-chest">
+        </div>
+
+        <!-- Quest 2 -->
+        <div class="quest-strip">
+          <div class="quest">
+            <img src="images/quest2.png" alt="Quest 2" class="img-var u-size-quest">
+            <span class="quest-label">Combo Bonus XP</span>
+            <div class="quest-bar"><div style="width:50%"></div></div>
+          </div>
+          <img src="images/chest.png" alt="Chest 2" class="img-var u-size-chest">
+        </div>
+
+        <!-- Quest 3 -->
+        <div class="quest-strip">
+          <div class="quest">
+            <img src="images/quest3.png" alt="Quest 3" class="img-var u-size-quest">
+            <span class="quest-label">Score 80% in 3 lessons</span>
+            <div class="quest-bar"><div style="width:0%"></div></div>
+          </div>
+          <img src="images/chest.png" alt="Chest 3" class="img-var u-size-chest">
+        </div>
       </div>
     </aside>
   </div>
 
-  <!-- Anchored popover (replaces centered modal) -->
+  <!-- Anchored popover -->
   <div class="popover hidden" id="practicePopover" role="dialog" aria-modal="true">
     <div class="popover-card" id="popoverCard">
       <div class="popover-title" id="popoverTitle">Chapter title</div>
