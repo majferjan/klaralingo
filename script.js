@@ -13,7 +13,16 @@ const CHAPTERS = [
           pairs:[["co","what"],["nebo","or"],["sůl","salt"],["krátký","short"]] }
       ]},
       { id:"U2", title:"Phrases", completed:false, exercises:[
-        { type:"choice", character:"man.png", hint:"book", prompt:"Select the correct meaning", choices:["kočka","kniha","slon"], correctIndex:1 }
+        { type:"choice", character:"man.png", hint:"book", prompt:"Select the correct meaning", choices:["kočka","kniha","slon"], correctIndex:1 },
+        {
+  type:"build",
+  prompt:"Translate: I like cats",
+  correct:"I like cats",
+  words:["I", "cats", "like", "hello", "food"],
+  character:"friends.png",
+  hint:"Build the sentence"
+}
+
       ]},
       { id:"U3", title:"Basics 2", completed:false, exercises:[
         { type:"choice", character:"man.png", hint:"hello", prompt:"Select the correct meaning", choices:["ahoj","dům","chléb"], correctIndex:0 }
@@ -138,7 +147,10 @@ function setBannerColor(color){
   els.banner.style.transition = "background-color 120ms linear";
 }
 function imageSrcForUnit(ch, unit){
-  return `images/${ch.imageId}-${unit.completed ? "completed" : "uncompleted"}.png`;
+  if (!unit.completed) {
+    return "images/uncompleted.png";        // always same
+  }
+  return `images/${ch.imageId}-completed.png`; // chapter-specific
 }
 
 /* ===== Persistent displacement ===== */
@@ -339,12 +351,15 @@ function enhanceQuests(){
 
     const barWrap = document.createElement("div");
     barWrap.style.cssText = "width:100%;height:10px;border:1px solid #1f3a43;border-radius:999px;background:#0c1f25;overflow:hidden;";
-    const fill = document.createElement("div");
-    fill.style.height = "100%";
-    fill.style.width = Math.round((q.progress||0)*100) + "%";
-    fill.style.background = "#58cc02";
-    fill.style.borderRadius = "999px";
-    barWrap.appendChild(fill);
+
+    const bar = document.createElement("div");
+    bar.className = "quest-fill";
+    bar.style.width = "0%";
+    bar.style.transition = "none";
+    const target = Math.round((q.progress || 0) * 100) + "%";
+    bar.setAttribute("data-final", target);
+
+
 
     li.appendChild(row);
     li.appendChild(barWrap);
@@ -505,6 +520,191 @@ function renderExercise(i){
     [...leftCol.children, ...rightCol.children].forEach(el => el.addEventListener("click", ()=>handleSelect(el)));
   }
 
+  /* ============================================================
+   BUILD SENTENCE — long bar + centered standalone layout
+============================================================ */
+if (ex.type === "build") {
+
+  /* OUTER WRAPPER — centers entire exercise in the page */
+  const wrapper = document.createElement("div");
+  wrapper.style.cssText = `
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    gap: 30px;
+  `;
+  els.exerciseContainer.appendChild(wrapper);
+
+  /* LARGE ANSWER BAR */
+  const answerBar = document.createElement("div");
+  answerBar.style.cssText = `
+    min-height: 62px;
+    width: min(900px, 90vw);      /* MUCH WIDER */
+    padding: 16px 18px;
+    background:#0f2630;
+    border:1px solid #1f3a43;
+    border-radius:14px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    transition: all .25s ease;
+  `;
+  wrapper.appendChild(answerBar);
+
+  /* WORD BANK — separate box, centered in middle of page */
+  const wordBank = document.createElement("div");
+  wordBank.style.cssText = `
+    width: min(900px, 90vw);
+    padding: 22px 18px;
+    background:#0b2630;
+    border:1px solid #1f3a43;
+    border-radius:14px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:16px;
+  `;
+  wrapper.appendChild(wordBank);
+
+  /* Shuffle & place words */
+  const pool = ex.words.slice();
+  shuffle(pool);
+
+  pool.forEach(word => {
+    const bubble = document.createElement("div");
+    bubble.textContent = word;
+    bubble.className = "bubble-word";
+    bubble.style.cssText = `
+      padding: 12px 16px;
+      background:#12333b;
+      border:1px solid #1f3a43;
+      border-radius:14px;
+      cursor:pointer;
+      font-weight:800;
+      color:#fff;
+      transition: transform .25s ease, opacity .25s ease;
+      position: relative;
+    `;
+
+    /* CLICK → slide upwards to answer */
+    bubble.addEventListener("click", () => {
+      if (bubble.classList.contains("used")) return;
+
+      bubble.classList.add("used");
+      //bubble.style.opacity = "0.3";
+
+      /* clone bubble for slide animation */
+      const r = bubble.getBoundingClientRect();
+      const clone = bubble.cloneNode(true);
+      clone.style.position = "fixed";
+      clone.style.left = r.left + "px";
+      clone.style.top  = r.top + "px";
+      clone.style.margin = "0";
+      clone.style.zIndex = "9999";
+      clone.style.pointerEvents = "none";
+      document.body.appendChild(clone);
+
+      /* animate INTO ANSWER BAR — CENTERED */
+      requestAnimationFrame(() => {
+          const answerRect = answerBar.getBoundingClientRect();
+          const cloneRect  = clone.getBoundingClientRect();
+
+          clone.style.transition = "all .35s cubic-bezier(.2,.8,.2,1)";
+
+          // center X of the answer bar
+          const centerX = answerRect.left + answerRect.width / 2;
+
+          // move clone to the center
+          clone.style.left = (centerX - cloneRect.width / 2) + "px";
+          clone.style.top  = (answerRect.top + 20) + "px";
+      });
+
+
+      setTimeout(() => {
+        clone.remove();
+
+        /* actual element inside answer bar */
+        const added = document.createElement("div");
+        added.textContent = word;
+        added.style.cssText = `
+          padding: 12px 16px;
+          background:#0b3a44;
+          border:1px solid #1f3a43;
+          border-radius:14px;
+          cursor:pointer;
+          font-weight:800;
+          color:#fff;
+          transition: transform .25s ease;
+        `;
+        answerBar.appendChild(added);
+
+        /* remove word → slide DOWN back to word bank */
+        added.addEventListener("click", () => {
+          const r2 = added.getBoundingClientRect();
+          const clone2 = added.cloneNode(true);
+          clone2.style.position = "fixed";
+          clone2.style.left = r2.left + "px";
+          clone2.style.top  = r2.top + "px";
+          clone2.style.zIndex = "9999";
+          document.body.appendChild(clone2);
+
+          added.remove();
+          bubble.classList.remove("used");
+          bubble.style.opacity = "1";
+
+          const back = bubble.getBoundingClientRect();
+
+          requestAnimationFrame(() => {
+            const answerRect = answerBar.getBoundingClientRect();
+            const cloneRect  = clone.getBoundingClientRect();
+
+            clone.style.transition = "all .35s cubic-bezier(.2,.8,.2,1)";
+
+            // Move to center
+            const centerX = answerRect.left + answerRect.width / 2;
+            clone.style.left = (centerX - cloneRect.width / 2) + "px";
+            
+            clone.style.top = (answerRect.top + 20) + "px";
+          });
+
+
+          setTimeout(() => clone2.remove(), 350);
+        });
+
+        checkStatus();
+      }, 350);
+    });
+
+    wordBank.appendChild(bubble);
+  });
+
+  function currentSentence() {
+    return [...answerBar.children].map(x => x.textContent).join(" ").trim();
+  }
+
+  function checkStatus() {
+    els.checkBtn.disabled = false;
+    els.checkBtn.textContent = "CHECK";
+    els.checkBtn.classList.remove("btn-danger");
+  }
+
+  els.checkBtn.onclick = () => {
+    const res = currentSentence();
+    if (res === ex.correct.trim()) {
+      els.checkBtn.textContent = "CORRECT";
+      setTimeout(nextOrFinish, 600);
+    } else {
+      els.checkBtn.textContent = "TRY AGAIN";
+      els.checkBtn.classList.add("btn-danger");
+    }
+  };
+}
+
+
+
   els.skipBtn.onclick = nextOrFinish;
 }
 
@@ -517,6 +717,26 @@ function nextOrFinish(){
     exIdx++; renderExercise(exIdx);
   }
 }
+
+/* ===== Animate quest bars on page load ===== */
+window.addEventListener("load", () => {
+  const bars = document.querySelectorAll(".quest-fill");
+
+  bars.forEach(bar => {
+    const finalWidth = bar.getAttribute("data-final");   // we will store final width here
+    if (!finalWidth) return;
+
+    bar.style.width = "0%";             // ALWAYS start at 0
+    bar.style.transition = "width 1.8s ease";
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        bar.style.width = finalWidth;   // animate to target
+      });
+    });
+  });
+});
+
 
 /* ===== Utilities ===== */
 function setCheckDisabled(flag){ els.checkBtn.disabled = !!flag; }
