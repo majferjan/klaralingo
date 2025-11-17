@@ -41,11 +41,15 @@ body{
 
 .app-shell{
   display:grid;
-  grid-template-columns:300px 1fr 500px;
+  /* sidebar | roadmap area (max 900px) | right bar (380px) */
+  grid-template-columns:400px minmax(0, 900px) 500px;
   gap:16px;
   min-height:100vh;
-  .rightbar.wide{width:500px}
+
+  /* center whole three-column block in the viewport */
+  justify-content:flex-start;
 }
+
 .sidebar,.rightbar,.main{background:var(--surface)}
 
 /* LEFT SIDEBAR */
@@ -126,7 +130,7 @@ body{
   width:40px;height:40px;border-radius:12px;
   border:1px solid rgba(0,0,0,.25);
   background:rgba(0,0,0,.1);
-  color:#08210e;font-weight:900;cursor:pointer;
+  color:#ffffff;font-weight:10000;cursor:pointer;
 }
 .sb-sub{font-size:.8rem;font-weight:800;opacity:.95}
 .sb-title{font-size:1.2rem;font-weight:900}
@@ -316,14 +320,13 @@ body{
 
 /* RIGHT BAR */
 .rightbar{
-  border-left:1px solid var(--divider);
   padding:16px;
   position:sticky;top:0;
   height:100vh;overflow:auto;
   display:flex;flex-direction:column;
   gap:16px;
 }
-.rightbar.wide{width:380px}
+.rightbar.wide{width:550px}
 .card{
   background:#0c1f25;
   border:1px solid #1f3a43;
@@ -417,7 +420,7 @@ body{
   white-space:nowrap;
 }
 .stat-icon{
-  height:20px;width:auto;
+  height:30px;width:auto;
   display:block;object-fit:contain;
 }
 .stat-text{color:#e9f1f1;}
@@ -455,7 +458,7 @@ body{
 
 .quest-fill {
   height: 100%;
-  background: #58cc02;
+  background: #dbd812;
   border-radius: 999px;
   width: 0%; 
   transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -502,7 +505,7 @@ body{
 
 .quest-progress {
   width: 100%;
-  height: 12px;
+  height: 17px;
   background: #12323a;
   border-radius: 6px;
   position: relative;
@@ -511,7 +514,7 @@ body{
 
 .quest-progress-fill {
   height: 100%;
-  background: #58cc02;
+  background: #dbc712;
   border-radius: 6px;
   position: relative;
   display: flex;
@@ -522,9 +525,9 @@ body{
 
 .quest-progress-text {
   font-family: 'Heiders Sans C Black', 'Poppins', 'Nunito', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 900;
-  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 1000;
+  color: #a07017;
   pointer-events: none;
 }
 
@@ -532,7 +535,7 @@ body{
 .quest-bar{
   width:120px;height:10px;
   border-radius:999px;
-  overflow:hidden;
+  overflow:visible;
   background:#0c2730;
   border:1px solid #183640;
 }
