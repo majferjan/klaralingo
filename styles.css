@@ -42,7 +42,7 @@ body{
 .app-shell{
   display:grid;
   /* sidebar | roadmap area (max 900px) | right bar (380px) */
-  grid-template-columns:400px minmax(0, 900px) 500px;
+  grid-template-columns:300px minmax(0, 900px) 500px;
   gap:16px;
   min-height:100vh;
 
@@ -54,7 +54,6 @@ body{
 
 /* LEFT SIDEBAR */
 .sidebar{
-  border-right:1px solid var(--divider);
   padding:16px 8px;
   position:sticky;
   top:0;
@@ -122,9 +121,10 @@ body{
 .section-banner{
   position:sticky; top:0; z-index:5;
   max-width:50%;
-  margin:0 auto 6px;
+  margin:0 auto 26px;
   transition:background-color 120ms linear;
 }
+
 .sb-left{display:flex;align-items:center;gap:10px}
 .back-arrow{
   width:40px;height:40px;border-radius:12px;
@@ -143,7 +143,8 @@ body{
   display:flex;
   flex-direction:column;
   gap:40px;
-  position:relative;
+  position:relative; 
+  margin-top: 50px;
 }
 
 /* Allow connectors to show under nodes */
@@ -320,18 +321,18 @@ body{
 
 /* RIGHT BAR */
 .rightbar{
-  padding:16px;
+  padding:15px;
   position:sticky;top:0;
   height:100vh;overflow:auto;
   display:flex;flex-direction:column;
-  gap:16px;
+  gap:10px;
 }
-.rightbar.wide{width:550px}
+.rightbar.wide{width:480px}
 .card{
   background:#0c1f25;
   border:1px solid #1f3a43;
   border-radius:16px;
-  padding:14px;
+  padding:16px;
   box-shadow:var(--shadow);
 }
 
@@ -410,12 +411,12 @@ body{
 .stat{
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:4px;
   background:#0c1f25;
   border:1px solid #1f3a43;
   border-radius:999px;
   border:none; 
-  padding:6px 10px;
+  padding:3px 5px;
   font-weight:800;
   white-space:nowrap;
 }
