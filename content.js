@@ -1,7 +1,11 @@
+/* ============================================================
+   CONTENT FILE — Story-based CZ–SL Learning
+============================================================ */
+
 const CHAPTERS = [
 
 /* ============================================================
-   CHAPTER 1 — Board Game Night & Swimming (27th)
+   CHAPTER 1 — The arrival (27th)
 ============================================================ */
 {
   id:"C1",
@@ -13,7 +17,9 @@ const CHAPTERS = [
 
   units:[
 
-    /* ---------- Lesson 1 ---------- */
+    /* --------------------------------------------------------
+       Lesson 1 — Rolling & playing
+    -------------------------------------------------------- */
     {
       id:"U1",
       title:"Rolling & playing",
@@ -22,39 +28,60 @@ const CHAPTERS = [
 
         {
           type:"choice",
-          character:"friends.png",
           prompt:"Select the correct meaning",
-          hint:"kocka",
-          choices:["kostka","svetlo","riba"],
+          hint:"avtobus",
+          character:"friends.png",
+          choices:["autobus","strom","řeka"],
           correctIndex:0
         },
 
         {
           type:"match",
-          character:"man.png",
           prompt:"Match the pairs",
-          hint:"Board-game words",
+          hint:"Arrival small-talk",
+          character:"man.png",
           pairs:[
-            ["igram","hraju"],
-            ["miza","stůl"],
-            ["karta","karta"],
-            ["vržem","hodíme"]
+            ["potovanje","cesta"],
+            ["drevo","strom"],
+            ["avti","auta"],
+            ["Pogrešal sem te!!","Chyběla jsi mi!!"]
           ]
         },
 
         {
           type:"build",
           prompt:"Translate",
-          hint:"Vržem kocko.",
-          correct:"Hodím kostkou",
+          hint:"Je bila vožnja dolga?",
+          correct:"Byla dlouhá cesta?",
           character:"friends.png",
-          words:["Hodím","kostkou","Jdeme","rychle","já"]
+          words:["Byla","dlouhá","cesta?","já","ne"]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"človek ne jezi se",
+          character:"friends.png",
+          choices:["Člověče, nezlob se","dej si pozor","poglej drevo"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
     },
 
-    /* ---------- Lesson 2 ---------- */
+    /* --------------------------------------------------------
+       Lesson 2 — Fun & chaos
+    -------------------------------------------------------- */
     {
       id:"U2",
       title:"Fun & chaos",
@@ -62,40 +89,62 @@ const CHAPTERS = [
       exercises:[
 
         {
-          type:"choice",
-          character:"friends.png",
-          prompt:"Select the correct meaning",
-          hint:"zmagam",
-          choices:["vyhraju","ponožka","cukr"],
-          correctIndex:0
-        },
-
-        {
           type:"match",
-          character:"man.png",
           prompt:"Match the pairs",
-          hint:"Funny phrases",
+          hint:"Board game chaos",
+          character:"friends.png",
           pairs:[
-            ["goljuf","podvodník"],
-            ["ne jezi se","člověče nezlob se"],
-            ["moja poteza","můj tah"],
-            ["prepir","hádka"]
+            ["kocka","kostka"],
+            ["potegni dve karti","táhni dvě karty"],
+            ["premešaj kup kart","zamíchej balíček"],
+            ["sediš na mojem mestu","sedíš na mém místě"]
           ]
         },
 
         {
           type:"build",
           prompt:"Translate",
-          hint:"Jaz vedno zmagam.",
-          correct:"Vždycky vyhraju",
+          hint:"Mami, Klarka goljufa!",
+          correct:"Mami, Klárka podvádí!",
           character:"friends.png",
-          words:["Vždycky","vyhraju","já","kostka","hra"]
+          words:["Mami,","Klárka","podvádí!","hra","ne"]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"počakaj me, grem lulat",
+          character:"man.png",
+          choices:["počkej na mě, jdu čůrat","dej mi karty","jdu ven"],
+          correctIndex:0
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"prinesi vročo čokolado",
+          character:"friends.png",
+          choices:["přines horkou čokoládu","vyhoď to","poglej dol"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
     },
 
-    /* ---------- Lesson 3 ---------- */
+
+    /* --------------------------------------------------------
+       Lesson 3 — Swimming time
+    -------------------------------------------------------- */
     {
       id:"U3",
       title:"Swimming time",
@@ -104,39 +153,61 @@ const CHAPTERS = [
 
         {
           type:"choice",
-          character:"friends.png",
           prompt:"Select the correct meaning",
-          hint:"plavati",
-          choices:["plavat","spát","topit"],
+          hint:"levo stopalo zeleno",
+          character:"friends.png",
+          choices:["levá noha zelená","pravá ruka modrá","levé rameno červené"],
           correctIndex:0
         },
 
         {
           type:"match",
-          character:"man.png",
           prompt:"Match the pairs",
-          hint:"Swimming words",
+          hint:"Board-game mini actions",
+          character:"man.png",
           pairs:[
-            ["voda","voda"],
-            ["bazen","bazén"],
-            ["mrzlo","studené"],
-            ["kopalke","plavky"]
+            ["počakaj","počkej"],
+            ["izberi","vyber"],
+            ["zamenjaj","vyměň"],
+            ["premakni","posuň"]
           ]
         },
 
         {
           type:"build",
           prompt:"Translate",
-          hint:"Voda je zelo mrzla.",
-          correct:"Voda je velmi studená",
+          hint:"Lahko sediš poleg mene.",
+          correct:"Můžeš sedět vedle mě.",
           character:"friends.png",
-          words:["Voda","je","velmi","studená","hra","kostka"]
+          words:["Můžeš","sedět","vedle","mě.","hra"]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"czech mate :)",
+          character:"friends.png",
+          choices:["šach mat","pozdní tah","ne vem"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
     },
 
-    /* ---------- Lesson 4 ---------- */
+
+    /* --------------------------------------------------------
+       Lesson 4 — Game night wrap-up
+    -------------------------------------------------------- */
     {
       id:"U4",
       title:"Game night wrap-up",
@@ -145,33 +216,56 @@ const CHAPTERS = [
 
         {
           type:"choice",
-          character:"friends.png",
           prompt:"Select the correct meaning",
-          hint:"zabavno",
-          choices:["zábavné","nemoc","okno"],
+          hint:"želiš igrati še malo ali iti gor?",
+          character:"friends.png",
+          choices:[
+            "chceš ještě hrát, nebo jít nahoru?",
+            "jdeš ven?",
+            "si utrujen?"
+          ],
           correctIndex:0
         },
 
         {
           type:"match",
-          character:"man.png",
           prompt:"Match the pairs",
-          hint:"Goodbye phrases",
+          hint:"Warm goodbye",
+          character:"man.png",
           pairs:[
-            ["dobro igro","dobrá hra"],
             ["lahko noč","dobrou noc"],
-            ["jutri","zítra"],
-            ["spet igramo","hrajeme zase"]
+            ["jutri nadaljujemo","zítra pokračujeme"],
+            ["hvala za igro","díky za hru"],
+            ["bilo je zabavno","bylo to zábavné"]
           ]
         },
 
         {
           type:"build",
           prompt:"Translate",
-          hint:"Igra je bila zabavna.",
-          correct:"Hra byla zábavná",
+          hint:"Nesem vročo čokolado!",
+          correct:"Nesu horkou čokoládu!",
           character:"friends.png",
-          words:["Hra","byla","zábavná","já","kostka"]
+          words:["Nesu","horkou","čokoládu!","já"]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"bilo je magično",
+          character:"friends.png",
+          choices:["bylo to magické","bylo to levné","bylo to rychlé"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
@@ -181,7 +275,7 @@ const CHAPTERS = [
 },
 
 /* ============================================================
-   CHAPTER 2 — Sledding & Christmas Lights (28th)
+   CHAPTER 2 — The cold shines bright (28th)
 ============================================================ */
 {
   id:"C2",
@@ -193,7 +287,9 @@ const CHAPTERS = [
 
   units:[
 
-    /* ---------- Lesson 1 ---------- */
+    /* --------------------------------------------------------
+       Lesson 1 — Snow basics
+    -------------------------------------------------------- */
     {
       id:"U5",
       title:"Snow basics",
@@ -202,39 +298,61 @@ const CHAPTERS = [
 
         {
           type:"choice",
-          character:"friends.png",
           prompt:"Select the correct meaning",
           hint:"sneg",
-          choices:["sníh","květ","dům"],
+          character:"friends.png",
+          choices:["sníh","dům","nebe"],
           correctIndex:0
         },
 
         {
           type:"match",
-          character:"man.png",
           prompt:"Match the pairs",
-          hint:"Winter words",
+          hint:"Gear up",
+          character:"man.png",
           pairs:[
-            ["mraz","mráz"],
-            ["bundi","bundy"],
             ["rokavice","rukavice"],
-            ["klobuk","klobouk"]
+            ["klobuk","klobouk"],
+            ["šal","šála"],
+            ["plašč","kabát"]
           ]
         },
 
         {
           type:"build",
           prompt:"Translate",
-          hint:"Sneg je povsod.",
-          correct:"Sníh je všude",
+          hint:"Ne pozabi na rokavice!",
+          correct:"Nezapomeň na rukavice!",
           character:"friends.png",
-          words:["Sníh","je","všude","hra","kostka"]
+          words:["Nezapomeň","na","rukavice!"]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"kaj pa kapa?",
+          character:"friends.png",
+          choices:["A co čepice?","Kje je mraz?","Gremo spat?"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
     },
 
-    /* ---------- Lesson 2 ---------- */
+
+    /* --------------------------------------------------------
+       Lesson 2 — Sledding fun
+    -------------------------------------------------------- */
     {
       id:"U6",
       title:"Sledding fun",
@@ -242,40 +360,62 @@ const CHAPTERS = [
       exercises:[
 
         {
-          type:"choice",
-          character:"friends.png",
-          prompt:"Select the correct meaning",
-          hint:"sankanje",
-          choices:["sáňkování","vaření","kreslení"],
-          correctIndex:0
-        },
-
-        {
           type:"match",
-          character:"man.png",
           prompt:"Match the pairs",
-          hint:"Sledding terms",
+          hint:"Sledding words",
+          character:"friends.png",
           pairs:[
             ["sanke","sáně"],
-            ["padec","pád"],
-            ["hrib","kopec"],
-            ["hitro","rychle"]
+            ["pazi, drevo!","pozor, strom!"],
+            ["Noter je bil kamen!!","Byl tam kamínek!!"],
+            ["gremo hitreje","jeďme rychleji"]
           ]
         },
 
         {
           type:"build",
           prompt:"Translate",
-          hint:"Gremo sankat.",
-          correct:"Jdeme sáňkovat",
+          hint:"Ne vidim ničesar!",
+          correct:"Nevidím nic!",
           character:"friends.png",
-          words:["Jdeme","sáňkovat","já","malo","hra"]
+          words:["Nevidím","nic!"]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"bom nesel, ne skrbi",
+          character:"man.png",
+          choices:["ponesu to, neboj","počakaj me","gremo domov"],
+          correctIndex:0
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"prosim ne povej mami!!!",
+          character:"friends.png",
+          choices:["prosím, neříkej to mámě!!!","rad te imam","pojdiva domov"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
     },
 
-    /* ---------- Lesson 3 ---------- */
+
+    /* --------------------------------------------------------
+       Lesson 3 — Christmas lights
+    -------------------------------------------------------- */
     {
       id:"U7",
       title:"Christmas lights",
@@ -284,39 +424,61 @@ const CHAPTERS = [
 
         {
           type:"choice",
-          character:"friends.png",
           prompt:"Select the correct meaning",
-          hint:"lučke",
-          choices:["světýlka","ryby","brambory"],
+          hint:"toliko lučk!",
+          character:"friends.png",
+          choices:["tolik světýlek!","tolik ljudi!","tolik hrane!"],
           correctIndex:0
         },
 
         {
           type:"match",
-          character:"man.png",
           prompt:"Match the pairs",
-          hint:"Light decoration words",
+          hint:"Magic walk",
+          character:"man.png",
           pairs:[
-            ["božič","Vánoce"],
-            ["drevo","strom"],
-            ["lučke","světýlka"],
-            ["temno","tma"]
+            ["to je kot sanje","to je jako sen"],
+            ["poglej, jelen!","podívej, jelen!"],
+            ["čarobno je","je to kouzelné"],
+            ["topla čokolada","horká čokoláda"]
           ]
         },
 
         {
           type:"build",
           prompt:"Translate",
-          hint:"Lučke so čudovite.",
-          correct:"Světýlka jsou nádherná",
+          hint:"Tako je magično.",
+          correct:"Je to tak kouzelné.",
           character:"friends.png",
-          words:["Světýlka","jsou","nádherná","hra","kostka"]
+          words:["Je","to","tak","kouzelné."]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"ljubim te Klarka <3",
+          character:"friends.png",
+          choices:["Miluju tě, Klárko <3","Rad imam psa","Vidím lučke"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
     },
 
-    /* ---------- Lesson 4 ---------- */
+
+    /* --------------------------------------------------------
+       Lesson 4 — Evening chills
+    -------------------------------------------------------- */
     {
       id:"U8",
       title:"Evening chills",
@@ -324,34 +486,53 @@ const CHAPTERS = [
       exercises:[
 
         {
-          type:"choice",
+          type:"match",
+          prompt:"Match the pairs",
+          hint:"Winter mood",
           character:"friends.png",
-          prompt:"Select the correct meaning",
-          hint:"zelo mrzlo",
-          choices:["velmi studené","levné","tiché"],
-          correctIndex:0
+          pairs:[
+            ["zelo mrzlo","velmi studeno"],
+            ["temno","tma"],
+            ["sneg","sníh"],
+            ["lučke","světýlka"]
+          ]
         },
 
         {
-          type:"match",
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"pojdimo na vročo čokolado!",
           character:"man.png",
-          prompt:"Match the pairs",
-          hint:"Feelings",
-          pairs:[
-            ["mraz","mráz"],
-            ["veselje","radost"],
-            ["smeh","smích"],
-            ["vroče","horko"]
-          ]
+          choices:["pojďme na horkou čokoládu!","pojdi spat","najdeva vlak"],
+          correctIndex:0
         },
 
         {
           type:"build",
           prompt:"Translate",
-          hint:"Zelo je mrzlo.",
-          correct:"Je velmi studeno",
+          hint:"Čutim mraz.",
+          correct:"Cítím mráz.",
           character:"friends.png",
-          words:["Je","velmi","studeno","hra","kostka"]
+          words:["Cítím","mráz."]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"tako je lepo",
+          character:"friends.png",
+          choices:["je to tak hezké","je to levné","je to temno"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
@@ -359,9 +540,9 @@ const CHAPTERS = [
 
   ]
 },
- 
+
 /* ============================================================
-   CHAPTER 3 — Cookies & Ice Skating (29th)
+   CHAPTER 3 — Slippery slope to sugar overdose (29th)
 ============================================================ */
 {
   id:"C3",
@@ -373,7 +554,9 @@ const CHAPTERS = [
 
   units:[
 
-    /* ---------- Lesson 1 ---------- */
+    /* --------------------------------------------------------
+       Lesson 1 — Baking with Saš & Tilen
+    -------------------------------------------------------- */
     {
       id:"U9",
       title:"Baking with Saš & Tilen",
@@ -382,39 +565,61 @@ const CHAPTERS = [
 
         {
           type:"choice",
-          character:"friends.png",
           prompt:"Select the correct meaning",
-          hint:"piškoti",
-          choices:["sušenky","okna","čaj"],
+          hint:"roža",
+          character:"friends.png",
+          choices:["květina","kniha","skříň"],
           correctIndex:0
         },
 
         {
           type:"match",
-          character:"friends.png",
           prompt:"Match the pairs",
-          hint:"Baking",
+          hint:"Baking ingredients",
+          character:"friends.png",
           pairs:[
             ["sladkor","cukr"],
-            ["moka","mouka"],
             ["čokolada","čokoláda"],
-            ["maslo","máslo"]
+            ["jajca","vejce"],
+            ["moka","mouka"]
           ]
         },
 
         {
           type:"build",
           prompt:"Translate",
-          hint:"Pečemo piškote.",
-          correct:"Pečeme sušenky",
+          hint:"Stepemo rumenjake.",
+          correct:"Ušleháme žloutky.",
           character:"friends.png",
-          words:["Pečeme","sušenky","já","hra","kostka"]
+          words:["Ušleháme","žloutky."]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"prižgi pečico prosim",
+          character:"friends.png",
+          choices:["zapni troubu prosím","dones cukr","vzemi jajca"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
     },
 
-    /* ---------- Lesson 2 ---------- */
+
+    /* --------------------------------------------------------
+       Lesson 2 — Kitchen chaos
+    -------------------------------------------------------- */
     {
       id:"U10",
       title:"Kitchen chaos",
@@ -423,22 +628,22 @@ const CHAPTERS = [
 
         {
           type:"choice",
-          character:"friends.png",
           prompt:"Select the correct meaning",
-          hint:"umazano",
-          choices:["špinavé","rychlé","drahé"],
+          hint:"tako dobro te je spet videti!",
+          character:"man.png",
+          choices:["je tak dobré tě zase vidět!","imam malo sladkorja","si lačen?"],
           correctIndex:0
         },
 
         {
           type:"match",
-          character:"man.png",
           prompt:"Match the pairs",
-          hint:"Kitchen mistakes",
+          hint:"Kitchen oopsies",
+          character:"friends.png",
           pairs:[
-            ["preveč","příliš"],
+            ["polito","rozlité"],
+            ["umazano","špinavé"],
             ["zažgano","spálené"],
-            ["razbito","rozbité"],
             ["nered","nepořádek"]
           ]
         },
@@ -446,16 +651,38 @@ const CHAPTERS = [
         {
           type:"build",
           prompt:"Translate",
-          hint:"Kuhinja je nered.",
-          correct:"Kuchyň je nepořádek",
+          hint:"Kako je bil božični sejem?",
+          correct:"Jaký byl vánoční trh?",
           character:"friends.png",
-          words:["Kuchyň","je","nepořádek","hra","kostka"]
+          words:["Jaký","byl","vánoční","trh?"]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"(Hey baby wanna puck?)",
+          character:"friends.png",
+          choices:["—","—","—"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
     },
 
-    /* ---------- Lesson 3 ---------- */
+
+    /* --------------------------------------------------------
+       Lesson 3 — Ice skating
+    -------------------------------------------------------- */
     {
       id:"U11",
       title:"Ice skating",
@@ -464,39 +691,61 @@ const CHAPTERS = [
 
         {
           type:"choice",
-          character:"friends.png",
           prompt:"Select the correct meaning",
-          hint:"drsanje",
-          choices:["bruslení","běhání","zpěv"],
+          hint:"drsanje (indirect vocab)",
+          character:"friends.png",
+          choices:["klouzání","zpívání","kopání"],
           correctIndex:0
         },
 
         {
           type:"match",
-          character:"man.png",
           prompt:"Match the pairs",
-          hint:"Skating words",
+          hint:"Skating moves",
+          character:"man.png",
           pairs:[
-            ["led","led"],
-            ["padec","pád"],
             ["krog","kruh"],
-            ["počasi","pomalu"]
+            ["počasi","pomalu"],
+            ["padec","pád"],
+            ["obrat","otočka"]
           ]
         },
 
         {
           type:"build",
           prompt:"Translate",
-          hint:"Drsam počasi.",
-          correct:"Bruslím pomalu",
+          hint:"Drsim počasi.",
+          correct:"Kloužu pomalu.",
           character:"friends.png",
-          words:["Bruslím","pomalu","já","hra","kostka"]
+          words:["Kloužu","pomalu."]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"pojdi malo hitreje",
+          character:"friends.png",
+          choices:["jeď trochu rychleji","je tma","dodaj sladkor"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
     },
 
-    /* ---------- Lesson 4 ---------- */
+
+    /* --------------------------------------------------------
+       Lesson 4 — Sweet evening
+    -------------------------------------------------------- */
     {
       id:"U12",
       title:"Sweet evening",
@@ -504,34 +753,53 @@ const CHAPTERS = [
       exercises:[
 
         {
-          type:"choice",
+          type:"match",
+          prompt:"Match the pairs",
+          hint:"Cozy vibes",
           character:"friends.png",
-          prompt:"Select the correct meaning",
-          hint:"topel čaj",
-          choices:["teplý čaj","drahý dům","tmavý pokoj"],
-          correctIndex:0
+          pairs:[
+            ["večerja","večeře"],
+            ["toplo","teplo"],
+            ["mirno","klidně"],
+            ["čaj","čaj"]
+          ]
         },
 
         {
-          type:"match",
-          character:"friends.png",
-          prompt:"Match the pairs",
-          hint:"Warm evening words",
-          pairs:[
-            ["zajtrk","snídaně"],
-            ["večerja","večeře"],
-            ["toplo","teplo"],
-            ["mirno","klidně"]
-          ]
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"dobro, gremo domov?",
+          character:"man.png",
+          choices:["dobře, jdeme domů?","kje je sladkor","želiš ven?"],
+          correctIndex:0
         },
 
         {
           type:"build",
           prompt:"Translate",
           hint:"Večer pijemo topel čaj.",
-          correct:"Večer pijeme teplý čaj",
+          correct:"Večer pijeme teplý čaj.",
           character:"friends.png",
-          words:["Večer","pijeme","teplý","čaj","hra","kostka"]
+          words:["Večer","pijeme","teplý","čaj."]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"zelo lepo",
+          character:"friends.png",
+          choices:["velmi hezky","velmi draho","velmi pozdě"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
@@ -541,7 +809,7 @@ const CHAPTERS = [
 },
 
 /* ============================================================
-   CHAPTER 4 — Devu Concert & Bus Adventures (30th)
+   CHAPTER 4 — Musical journey (30th)
 ============================================================ */
 {
   id:"C4",
@@ -553,7 +821,9 @@ const CHAPTERS = [
 
   units:[
 
-    /* ---------- Lesson 1 ---------- */
+    /* --------------------------------------------------------
+       Lesson 1 — Getting ready
+    -------------------------------------------------------- */
     {
       id:"U13",
       title:"Getting ready",
@@ -562,39 +832,61 @@ const CHAPTERS = [
 
         {
           type:"choice",
-          character:"friends.png",
           prompt:"Select the correct meaning",
-          hint:"koncert",
-          choices:["koncert","kočka","mléko"],
+          hint:"kopalke",
+          character:"friends.png",
+          choices:["plavky","kalhoty","kniha"],
           correctIndex:0
         },
 
         {
           type:"match",
-          character:"man.png",
           prompt:"Match the pairs",
-          hint:"Preparation words",
+          hint:"Warm-up",
+          character:"man.png",
           pairs:[
-            ["obleka","oblečení"],
-            ["glasba","hudba"],
-            ["čas","čas"],
-            ["telefon","telefon"]
+            ["brisače","ručníky"],
+            ["voda","voda"],
+            ["jacuzzi","vířivka"],
+            ["ne skrbi, lahko peljem","neboj, můžu řídit"]
           ]
         },
 
         {
           type:"build",
           prompt:"Translate",
-          hint:"Gremo na koncert.",
-          correct:"Jdeme na koncert",
+          hint:"Vse si spakirala?",
+          correct:"Zabalila jsi všechno?",
           character:"friends.png",
-          words:["Jdeme","na","koncert","hra","kostka"]
+          words:["Zabalila","jsi","všechno?"]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"ti je bilo všeč?",
+          character:"friends.png",
+          choices:["líbilo se ti to?","si utrujena?","je ti mraz?"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
     },
 
-    /* ---------- Lesson 2 ---------- */
+
+    /* --------------------------------------------------------
+       Lesson 2 — At Devu
+    -------------------------------------------------------- */
     {
       id:"U14",
       title:"At Devu",
@@ -602,40 +894,62 @@ const CHAPTERS = [
       exercises:[
 
         {
-          type:"choice",
+          type:"match",
+          prompt:"Match the pairs",
+          hint:"Concert items",
           character:"friends.png",
-          prompt:"Select the correct meaning",
-          hint:"glasno",
-          choices:["hlasitě","levně","pomalu"],
-          correctIndex:0
+          pairs:[
+            ["bobni","bicí"],
+            ["kitara","kytara"],
+            ["luči","světla"],
+            ["mikrofon","mikrofon"]
+          ]
         },
 
         {
-          type:"match",
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"ne pozabi čepkov za ušesa",
           character:"man.png",
-          prompt:"Match the pairs",
-          hint:"Concert vocabulary",
-          pairs:[
-            ["množica","dav"],
-            ["oder","pódium"],
-            ["plesati","tancovat"],
-            ["kričati","křičet"]
-          ]
+          choices:["ne zapomeň na špunty do uší","vzemi denar","daj bundu"],
+          correctIndex:0
         },
 
         {
           type:"build",
           prompt:"Translate",
-          hint:"Glasba je zelo glasna.",
-          correct:"Hudba je velmi hlasitá",
+          hint:"Kako je bil koncert?",
+          correct:"Jaký byl koncert?",
           character:"friends.png",
-          words:["Hudba","je","velmi","hlasitá","hra","kostka"]
+          words:["Jaký","byl","koncert?"]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"damn izgledaš vroče v tem",
+          character:"friends.png",
+          choices:["vypadáš v tom fakt skvěle","je ti vroče","pojdi spat"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
     },
 
-    /* ---------- Lesson 3 ---------- */
+
+    /* --------------------------------------------------------
+       Lesson 3 — Bus chaos
+    -------------------------------------------------------- */
     {
       id:"U15",
       title:"Bus chaos",
@@ -644,39 +958,61 @@ const CHAPTERS = [
 
         {
           type:"choice",
-          character:"friends.png",
           prompt:"Select the correct meaning",
-          hint:"avtobus",
-          choices:["autobus","vlak","loď"],
+          hint:"vozovnica",
+          character:"friends.png",
+          choices:["jízdenka","světlo","okno"],
           correctIndex:0
         },
 
         {
           type:"match",
-          character:"man.png",
           prompt:"Match the pairs",
-          hint:"Bus trip words",
+          hint:"Bus ride words",
+          character:"man.png",
           pairs:[
-            ["vozovnica","jízdenka"],
+            ["pozno","pozdě"],
+            ["spanje","spánek"],
             ["vožnja","jízda"],
-            ["prepozno","pozdě"],
-            ["gneča","tlačenice"]
+            ["avtobus","autobus"]
           ]
         },
 
         {
           type:"build",
           prompt:"Translate",
-          hint:"Avtobus je poln.",
-          correct:"Autobus je plný",
+          hint:"Zamudila sva!",
+          correct:"Zmeškali jsme to!",
           character:"friends.png",
-          words:["Autobus","je","plný","hra","kostka"]
+          words:["Zmeškali","jsme","to!"]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"nočna vožnja",
+          character:"friends.png",
+          choices:["noční jízda","levná jízda","dolga pot"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
     },
 
-    /* ---------- Lesson 4 ---------- */
+
+    /* --------------------------------------------------------
+       Lesson 4 — After the show
+    -------------------------------------------------------- */
     {
       id:"U16",
       title:"After the show",
@@ -684,34 +1020,53 @@ const CHAPTERS = [
       exercises:[
 
         {
-          type:"choice",
+          type:"match",
+          prompt:"Match the pairs",
+          hint:"Late-night words",
           character:"friends.png",
-          prompt:"Select the correct meaning",
-          hint:"utrujen",
-          choices:["unavený","rychlý","smutný"],
-          correctIndex:0
+          pairs:[
+            ["karte","lístky"],
+            ["spanje","spánek"],
+            ["domov","domů"],
+            ["utrujen","unavený"]
+          ]
         },
 
         {
-          type:"match",
-          character:"man.png",
-          prompt:"Match the pairs",
-          hint:"Late-night words",
-          pairs:[
-            ["pozno","pozdě"],
-            ["domov","domů"],
-            ["spanje","spánek"],
-            ["vožnja","jízda"]
-          ]
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"samo zaspi",
+          character:"friends.png",
+          choices:["jen usni","jen počkej","pojej to"],
+          correctIndex:0
         },
 
         {
           type:"build",
           prompt:"Translate",
-          hint:"Zelo sem utrujen.",
-          correct:"Jsem velmi unavený",
+          hint:"Bila je dolga noč.",
+          correct:"Byla to dlouhá noc.",
           character:"friends.png",
-          words:["Jsem","velmi","unavený","hra","kostka"]
+          words:["Byla","to","dlouhá","noc."]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"gremo domov",
+          character:"man.png",
+          choices:["jdeme domů","jdeme ven","jdeme nazaj"],
+          correctIndex:0
+        },
+
+        /* blank */
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"",
+          correct:"",
+          character:"friends.png",
+          words:[]
         }
 
       ]
