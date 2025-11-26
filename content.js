@@ -31,7 +31,7 @@ const CHAPTERS = [
           prompt:"Select the correct meaning",
           hint:"avtobus",
           character:"friends.png",
-          choices:["autobus","strom","řeka"],
+          choices:["busiiik :)","strom","řeka"],
           correctIndex:0
         },
 
@@ -44,7 +44,7 @@ const CHAPTERS = [
             ["potovanje","cesta"],
             ["drevo","strom"],
             ["avti","auta"],
-            ["Pogrešal sem te!!","Chyběla jsi mi!!"]
+            ["Ty","Jaz"]
           ]
         },
 
@@ -54,7 +54,7 @@ const CHAPTERS = [
           hint:"Je bila vožnja dolga?",
           correct:"Byla dlouhá cesta?",
           character:"friends.png",
-          words:["Byla","dlouhá","cesta?","já","ne"]
+          words:["Byla","dlouhá","cesta?","já","Geralt"]
         },
 
         {
@@ -62,7 +62,7 @@ const CHAPTERS = [
           prompt:"Select the correct meaning",
           hint:"človek ne jezi se",
           character:"friends.png",
-          choices:["Člověče, nezlob se","dej si pozor","poglej drevo"],
+          choices:["Člověče, nezlob se","ale už jsou to asi 4 měsíce","Miluji tě"],
           correctIndex:0
         },
 
@@ -70,10 +70,10 @@ const CHAPTERS = [
         {
           type:"build",
           prompt:"Translate",
-          hint:"",
-          correct:"",
+          hint:"I love you Honey <3",
+          correct:"Miluji tě, zlato <3",
           character:"friends.png",
-          words:[]
+          words:["Miluji","tě,","zlato","<3"]
         }
 
       ]
@@ -95,8 +95,8 @@ const CHAPTERS = [
           character:"friends.png",
           pairs:[
             ["kocka","kostka"],
-            ["potegni dve karti","táhni dvě karty"],
-            ["premešaj kup kart","zamíchej balíček"],
+            ["povleci dve karti","táhni dvě karty"],
+            ["premešaj karte","zamíchej karty"],
             ["sediš na mojem mestu","sedíš na mém místě"]
           ]
         },
@@ -107,7 +107,7 @@ const CHAPTERS = [
           hint:"Mami, Klarka goljufa!",
           correct:"Mami, Klárka podvádí!",
           character:"friends.png",
-          words:["Mami,","Klárka","podvádí!","hra","ne"]
+          words:["Mami,","Klárka","podvádí!","kolonáda","ne"]
         },
 
         {
@@ -122,22 +122,11 @@ const CHAPTERS = [
         {
           type:"choice",
           prompt:"Select the correct meaning",
-          hint:"prinesi vročo čokolado",
+          hint:"vzemi si vročo čokolado",
           character:"friends.png",
-          choices:["přines horkou čokoládu","vyhoď to","poglej dol"],
+          choices:["dát si horkou čokoládu","vyhoď to","čusik busiiikkk"],
           correctIndex:0
         },
-
-        /* blank */
-        {
-          type:"build",
-          prompt:"Translate",
-          hint:"",
-          correct:"",
-          character:"friends.png",
-          words:[]
-        }
-
       ]
     },
 
@@ -176,10 +165,10 @@ const CHAPTERS = [
         {
           type:"build",
           prompt:"Translate",
-          hint:"Lahko sediš poleg mene.",
-          correct:"Můžeš sedět vedle mě.",
+          hint:"vsedi se zraven mene.",
+          correct:"sedni si vedle mě",
           character:"friends.png",
-          words:["Můžeš","sedět","vedle","mě.","hra"]
+          words:["sedni","si","vedle","mě"]
         },
 
         {
@@ -187,20 +176,9 @@ const CHAPTERS = [
           prompt:"Select the correct meaning",
           hint:"czech mate :)",
           character:"friends.png",
-          choices:["šach mat","pozdní tah","ne vem"],
+          choices:["šach mat","pozdní tah","geralt je nejhezčí"],
           correctIndex:0
         },
-
-        /* blank */
-        {
-          type:"build",
-          prompt:"Translate",
-          hint:"",
-          correct:"",
-          character:"friends.png",
-          words:[]
-        }
-
       ]
     },
 
@@ -221,8 +199,8 @@ const CHAPTERS = [
           character:"friends.png",
           choices:[
             "chceš ještě hrát, nebo jít nahoru?",
-            "jdeš ven?",
-            "si utrujen?"
+            "zítra tě to takhle zavalí sněhem <3",
+            "jsi unavená?"
           ],
           correctIndex:0
         },
@@ -241,15 +219,6 @@ const CHAPTERS = [
         },
 
         {
-          type:"build",
-          prompt:"Translate",
-          hint:"Nesem vročo čokolado!",
-          correct:"Nesu horkou čokoládu!",
-          character:"friends.png",
-          words:["Nesu","horkou","čokoládu!","já"]
-        },
-
-        {
           type:"choice",
           prompt:"Select the correct meaning",
           hint:"bilo je magično",
@@ -262,10 +231,10 @@ const CHAPTERS = [
         {
           type:"build",
           prompt:"Translate",
-          hint:"",
-          correct:"",
+          hint:"jdeme si umýt zuby",
+          correct:"Greva si umit zobe",
           character:"friends.png",
-          words:[]
+          words:["Greva","si","umit","zobe"]
         }
 
       ]
@@ -314,7 +283,7 @@ const CHAPTERS = [
             ["rokavice","rukavice"],
             ["klobuk","klobouk"],
             ["šal","šála"],
-            ["plašč","kabát"]
+            ["polibek","tvou tvář"]
           ]
         },
 
@@ -332,19 +301,19 @@ const CHAPTERS = [
           prompt:"Select the correct meaning",
           hint:"kaj pa kapa?",
           character:"friends.png",
-          choices:["A co čepice?","Kje je mraz?","Gremo spat?"],
+          choices:["A co čepice?","Kje je mraz?","Geralt je nejchytřejší!"],
           correctIndex:0
         },
 
-        /* blank */
         {
-          type:"build",
-          prompt:"Translate",
-          hint:"",
-          correct:"",
-          character:"friends.png",
-          words:[]
-        }
+          type:"match",
+          prompt:"Match the pairs",
+          hint:"Hehe >:)",
+          character:"man.png",
+          pairs:[
+            ["sněhová koule","ty"],
+          ]
+        },
 
       ]
     },
@@ -367,8 +336,8 @@ const CHAPTERS = [
           pairs:[
             ["sanke","sáně"],
             ["pazi, drevo!","pozor, strom!"],
-            ["Noter je bil kamen!!","Byl tam kamínek!!"],
-            ["gremo hitreje","jeďme rychleji"]
+            ["noter je bil kamen!!","uvnitř byl kámen!!"],
+            ["greva hitreje","pojďme rychleji"]
           ]
         },
 
@@ -384,30 +353,20 @@ const CHAPTERS = [
         {
           type:"choice",
           prompt:"Select the correct meaning",
-          hint:"bom nesel, ne skrbi",
+          hint:"bom jaz nesel, ne skrbi",
           character:"man.png",
-          choices:["ponesu to, neboj","počakaj me","gremo domov"],
+          choices:["ponesu, neboj se","pojdi ti","Geralt je nejnadýchanější!"],
           correctIndex:0
         },
 
         {
           type:"choice",
           prompt:"Select the correct meaning",
-          hint:"prosim ne povej mami!!!",
+          hint:"ne skrbi bom jaz peljal domov",
           character:"friends.png",
-          choices:["prosím, neříkej to mámě!!!","rad te imam","pojdiva domov"],
+          choices:["neboj se, odvezu nás domů","rad te imam","pojďme domů"],
           correctIndex:0
         },
-
-        /* blank */
-        {
-          type:"build",
-          prompt:"Translate",
-          hint:"",
-          correct:"",
-          character:"friends.png",
-          words:[]
-        }
 
       ]
     },
@@ -425,7 +384,7 @@ const CHAPTERS = [
         {
           type:"choice",
           prompt:"Select the correct meaning",
-          hint:"toliko lučk!",
+          hint:"official invite or something 🙄",
           character:"friends.png",
           choices:["tolik světýlek!","tolik ljudi!","tolik hrane!"],
           correctIndex:0
@@ -440,7 +399,7 @@ const CHAPTERS = [
             ["to je kot sanje","to je jako sen"],
             ["poglej, jelen!","podívej, jelen!"],
             ["čarobno je","je to kouzelné"],
-            ["topla čokolada","horká čokoláda"]
+            ["Us","svařené víno"]
           ]
         },
 
@@ -458,7 +417,7 @@ const CHAPTERS = [
           prompt:"Select the correct meaning",
           hint:"ljubim te Klarka <3",
           character:"friends.png",
-          choices:["Miluju tě, Klárko <3","Rad imam psa","Vidím lučke"],
+          choices:["Miluju tě, Klárko <3","hihi :)","Geralt je pořád nejlepší!", "miluji tě víc!! <3"],
           correctIndex:0
         },
 
@@ -466,10 +425,10 @@ const CHAPTERS = [
         {
           type:"build",
           prompt:"Translate",
-          hint:"",
-          correct:"",
+          hint:"No i love you more! <3",
+          correct:"Ne, miluji tě víc! <3",
           character:"friends.png",
-          words:[]
+          words:["Ne,","miluji","tě","víc!","<3" ]
         }
 
       ]
@@ -510,10 +469,19 @@ const CHAPTERS = [
         {
           type:"build",
           prompt:"Translate",
-          hint:"Čutim mraz.",
-          correct:"Cítím mráz.",
+          hint:"čutim mraz.",
+          correct:"cítím mráz.",
           character:"friends.png",
-          words:["Cítím","mráz."]
+          words:["cítím","mráz."]
+        },
+
+        {
+          type:"build",
+          prompt:"Translate",
+          hint:"pridi bližje potem",
+          correct:"tak pojď blíž",
+          character:"friends.png",
+          words:["tak","pojď","blíž"]
         },
 
         {
@@ -524,16 +492,6 @@ const CHAPTERS = [
           choices:["je to tak hezké","je to levné","je to temno"],
           correctIndex:0
         },
-
-        /* blank */
-        {
-          type:"build",
-          prompt:"Translate",
-          hint:"",
-          correct:"",
-          character:"friends.png",
-          words:[]
-        }
 
       ]
     }
@@ -566,7 +524,7 @@ const CHAPTERS = [
         {
           type:"choice",
           prompt:"Select the correct meaning",
-          hint:"roža",
+          hint:"moka",
           character:"friends.png",
           choices:["květina","kniha","skříň"],
           correctIndex:0
@@ -580,7 +538,7 @@ const CHAPTERS = [
           pairs:[
             ["sladkor","cukr"],
             ["čokolada","čokoláda"],
-            ["jajca","vejce"],
+            ["uff cant have that one...😬","vejce"],
             ["moka","mouka"]
           ]
         },
@@ -602,16 +560,6 @@ const CHAPTERS = [
           choices:["zapni troubu prosím","dones cukr","vzemi jajca"],
           correctIndex:0
         },
-
-        /* blank */
-        {
-          type:"build",
-          prompt:"Translate",
-          hint:"",
-          correct:"",
-          character:"friends.png",
-          words:[]
-        }
 
       ]
     },
@@ -636,6 +584,15 @@ const CHAPTERS = [
         },
 
         {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"kako gre?",
+          character:"man.png",
+          choices:["jak se máš","imam malo sladkorja","si lačen?"],
+          correctIndex:0
+        },
+
+        {
           type:"match",
           prompt:"Match the pairs",
           hint:"Kitchen oopsies",
@@ -643,7 +600,7 @@ const CHAPTERS = [
           pairs:[
             ["polito","rozlité"],
             ["umazano","špinavé"],
-            ["zažgano","spálené"],
+            ["zažgano","čokoládové :)"],
             ["nered","nepořádek"]
           ]
         },
@@ -656,25 +613,6 @@ const CHAPTERS = [
           character:"friends.png",
           words:["Jaký","byl","vánoční","trh?"]
         },
-
-        {
-          type:"choice",
-          prompt:"Select the correct meaning",
-          hint:"(Hey baby wanna puck?)",
-          character:"friends.png",
-          choices:["—","—","—"],
-          correctIndex:0
-        },
-
-        /* blank */
-        {
-          type:"build",
-          prompt:"Translate",
-          hint:"",
-          correct:"",
-          character:"friends.png",
-          words:[]
-        }
 
       ]
     },
@@ -692,9 +630,9 @@ const CHAPTERS = [
         {
           type:"choice",
           prompt:"Select the correct meaning",
-          hint:"drsanje (indirect vocab)",
+          hint:"drsanje",
           character:"friends.png",
-          choices:["klouzání","zpívání","kopání"],
+          choices:["bruslení na ledě","zpívání","kopání"],
           correctIndex:0
         },
 
@@ -706,7 +644,7 @@ const CHAPTERS = [
           pairs:[
             ["krog","kruh"],
             ["počasi","pomalu"],
-            ["padec","pád"],
+            ["Us?? NEVER!!","pád"],
             ["obrat","otočka"]
           ]
         },
@@ -733,10 +671,10 @@ const CHAPTERS = [
         {
           type:"build",
           prompt:"Translate",
-          hint:"",
-          correct:"",
+          hint:"Hey baby wanna puck? :)",
+          correct:"hehe :)",
           character:"friends.png",
-          words:[]
+          words:[ "hehe :)" ]
         }
 
       ]
@@ -777,30 +715,20 @@ const CHAPTERS = [
         {
           type:"build",
           prompt:"Translate",
-          hint:"Večer pijemo topel čaj.",
-          correct:"Večer pijeme teplý čaj.",
+          hint:"čas je za čaj :)",
+          correct:"jeho čas na čaj :)",
           character:"friends.png",
-          words:["Večer","pijeme","teplý","čaj."]
+          words:["jeho","čas","na","čaj",":)"]
         },
 
         {
           type:"choice",
           prompt:"Select the correct meaning",
-          hint:"zelo lepo",
+          hint:"Yeah, im keeping you <3",
           character:"friends.png",
-          choices:["velmi hezky","velmi draho","velmi pozdě"],
+          choices:["All yours"],
           correctIndex:0
         },
-
-        /* blank */
-        {
-          type:"build",
-          prompt:"Translate",
-          hint:"",
-          correct:"",
-          character:"friends.png",
-          words:[]
-        }
 
       ]
     }
@@ -848,8 +776,17 @@ const CHAPTERS = [
             ["brisače","ručníky"],
             ["voda","voda"],
             ["jacuzzi","vířivka"],
-            ["ne skrbi, lahko peljem","neboj, můžu řídit"]
+            ["ne skrbi, jaz peljem","neboj, já řídím"]
           ]
+        },
+
+        {
+          type:"choice",
+          prompt:"Select the correct meaning",
+          hint:"izgledaš fenomenalno v kopalkah!!",
+          character:"friends.png",
+          choices:["vypadáš fenomenálně v plavkách!!","raději bych tě viděl bez toho","miluji tě! <3"],
+          correctIndex:0
         },
 
         {
@@ -869,16 +806,6 @@ const CHAPTERS = [
           choices:["líbilo se ti to?","si utrujena?","je ti mraz?"],
           correctIndex:0
         },
-
-        /* blank */
-        {
-          type:"build",
-          prompt:"Translate",
-          hint:"",
-          correct:"",
-          character:"friends.png",
-          words:[]
-        }
 
       ]
     },
@@ -911,37 +838,18 @@ const CHAPTERS = [
           prompt:"Select the correct meaning",
           hint:"ne pozabi čepkov za ušesa",
           character:"man.png",
-          choices:["ne zapomeň na špunty do uší","vzemi denar","daj bundu"],
+          choices:["ne zapomeň na špunty do uší","daj bundu", "v tomto bodě chybí Geralt"],
           correctIndex:0
         },
 
         {
           type:"build",
           prompt:"Translate",
-          hint:"Kako je bil koncert?",
-          correct:"Jaký byl koncert?",
+          hint:"Kakšen ti je bil koncert?",
+          correct:"Jaký ty je byl koncert?",
           character:"friends.png",
-          words:["Jaký","byl","koncert?"]
+          words:["Jaký","ty","je","byl","koncert?"]
         },
-
-        {
-          type:"choice",
-          prompt:"Select the correct meaning",
-          hint:"damn izgledaš vroče v tem",
-          character:"friends.png",
-          choices:["vypadáš v tom fakt skvěle","je ti vroče","pojdi spat"],
-          correctIndex:0
-        },
-
-        /* blank */
-        {
-          type:"build",
-          prompt:"Translate",
-          hint:"",
-          correct:"",
-          character:"friends.png",
-          words:[]
-        }
 
       ]
     },
@@ -978,13 +886,23 @@ const CHAPTERS = [
           ]
         },
 
+                {
+          type:"match",
+          prompt:"Match the pairs",
+          hint:"Bus ride words",
+          character:"man.png",
+          pairs:[
+            ["tvoja hlava","moje rameno"],
+          ]
+        },
+
         {
           type:"build",
           prompt:"Translate",
           hint:"Zamudila sva!",
           correct:"Zmeškali jsme to!",
           character:"friends.png",
-          words:["Zmeškali","jsme","to!"]
+          words:["Zmeškali","jsme","to!", "oh well :)"]
         },
 
         {
@@ -995,17 +913,6 @@ const CHAPTERS = [
           choices:["noční jízda","levná jízda","dolga pot"],
           correctIndex:0
         },
-
-        /* blank */
-        {
-          type:"build",
-          prompt:"Translate",
-          hint:"",
-          correct:"",
-          character:"friends.png",
-          words:[]
-        }
-
       ]
     },
 
@@ -1053,9 +960,9 @@ const CHAPTERS = [
         {
           type:"choice",
           prompt:"Select the correct meaning",
-          hint:"gremo domov",
+          hint:"greva domov",
           character:"man.png",
-          choices:["jdeme domů","jdeme ven","jdeme nazaj"],
+          choices:["pojďme domů","jdeme ven","jdeme nazaj"],
           correctIndex:0
         },
 
@@ -1063,10 +970,10 @@ const CHAPTERS = [
         {
           type:"build",
           prompt:"Translate",
-          hint:"",
-          correct:"",
+          hint:"můja navždy <3",
+          correct:"navždy.",
           character:"friends.png",
-          words:[]
+          words:["navždy.", "No, Geralt si je pořád hodně blízký, protože je to trochu jiný druh vztahu, takže je docela těžké tohle mít rád, protože víš :)"]
         }
 
       ]

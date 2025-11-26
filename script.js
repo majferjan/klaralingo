@@ -11,6 +11,7 @@ const SIZE = {
 };
 /* Move the man toward the nodes (negative pulls inward). */
 const CHAPTER_MAN_OFFSET = 150;
+const LESSON_IMAGE_COUNT = 3;
 
 /* Daily quests: progress 0..1 */
 const QUESTS = [
@@ -95,6 +96,12 @@ function wireRickroll(){
   });
 }
 
+function getRandomLessonImage() {
+  const n = Math.floor(Math.random() * LESSON_IMAGE_COUNT) + 1;
+  return `images/lesson${n}.png`;
+}
+
+
 /* ===== Roadmap rendering (reduced vertical gap + chapter divider) ===== */
 function renderRoadmap(){
   els.roadmapColumn.innerHTML = "";
@@ -113,7 +120,7 @@ function renderRoadmap(){
       });
 
       const label = document.createElement("span");
-      label.textContent = `${ch.title} — ${ch.chapterTitle}`;
+      label.textContent = ch.chapterTitle;
       label.style.cssText = "color:#9fb1b8;font-weight:800;white-space:nowrap;";
 
       divider.appendChild(lineL);
@@ -228,7 +235,7 @@ function setupBannerTracker(){
         setBannerColor(ch.color);
         els.sectionNumber.textContent = String(lastIdx + 1);
         els.unitNumber.textContent = "1";
-        els.sbTitle.textContent = ch.chapterTitle || ch.title;
+        els.sbTitle.textContent = ch.chapterTitle;
       }
       return;
     }
@@ -262,7 +269,7 @@ function setupBannerTracker(){
       setBannerColor(ch.color);
       els.sectionNumber.textContent = String(bestIdx + 1);
       els.unitNumber.textContent = "1";
-      els.sbTitle.textContent = ch.chapterTitle || ch.title;
+      els.sbTitle.textContent = ch.chapterTitle;
     }
   }
 
@@ -330,7 +337,7 @@ function openPopover(nodeEl, ci, ui){
   const ch = curChapter();
   const total = ch.units.length; const num = ui+1;
 
-  els.popoverTitle.textContent = ch.chapterTitle || ch.title;
+  els.popoverTitle.textContent = ch.chapterTitle;
   els.popoverSub.textContent   = `Lesson ${num} of ${total}`;
   els.popoverCard.style.background = ch.color;
 
@@ -340,8 +347,16 @@ function openPopover(nodeEl, ci, ui){
 
   // position next to clicked node
   const r = nodeEl.getBoundingClientRect();
-  const x = Math.min(window.innerWidth - 300, Math.max(12, r.left + r.width + 8));
-  const y = Math.max(12, r.top - 10);
+  const popupWidth = els.popoverCard.offsetWidth || 260;
+  const x = Math.max(
+    12,
+    Math.min(
+      window.innerWidth - popupWidth - 12,
+      r.left + (r.width / 2) - (popupWidth / 2)
+    )
+  );
+
+  const y = r.bottom + 12;
   els.popoverCard.style.left = x + "px";
   els.popoverCard.style.top  = y + "px";
 
@@ -393,7 +408,7 @@ function renderExercise(i){
   els.exerciseHint.textContent  = ex.hint || "";
 
   // avatar keeps original aspect ratio
-  const src = ex.character ? `images/${ex.character}` : "images/man.png";
+  const src = getRandomLessonImage();
   const tmp = new Image();
   tmp.onload = () => {
     const ar = tmp.naturalWidth / tmp.naturalHeight || 1;
