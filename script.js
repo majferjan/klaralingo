@@ -11,7 +11,7 @@ const SIZE = {
 };
 /* Move the man toward the nodes (negative pulls inward). */
 const CHAPTER_MAN_OFFSET = 150;
-const LESSON_IMAGE_COUNT = 3;
+const LESSON_IMAGE_COUNT = 6;
 
 /* Daily quests: progress 0..1 */
 const QUESTS = [
