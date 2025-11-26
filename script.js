@@ -7,11 +7,12 @@ const RICK = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 /* ===== Easy knobs ===== */
 const SIZE = {
   roadmapManHeight: 250,   // man.png next to chapters
-  lessonAvatarHeight: 200, // avatar in lesson
+  lessonAvatarHeight: 250, // avatar in lesson
 };
 /* Move the man toward the nodes (negative pulls inward). */
 const CHAPTER_MAN_OFFSET = 150;
-const LESSON_IMAGE_COUNT = 6;
+const LESSON_IMAGE_COUNT = 11;
+let lessonImageIndex = 1;
 
 /* Daily quests: progress 0..1 */
 const QUESTS = [
@@ -48,6 +49,13 @@ const els = {
 /* ===== Helpers ===== */
 function curChapter(){ return CHAPTERS[chapterIdx]; }
 function curUnit(){ return curChapter().units[currentUnitIdx]; }
+function updateLessonProgress() {
+  const unit = curUnit();
+  const total = unit.exercises.length;
+  const percent = ((exIdx + 1) / total) * 100;
+  const bar = document.getElementById("lessonProgress");
+  if (bar) bar.style.width = percent + "%";
+}
 function setBannerColor(color){
   els.banner.style.background = color;
   els.banner.style.color = "#fff";
@@ -97,7 +105,11 @@ function wireRickroll(){
 }
 
 function getRandomLessonImage() {
-  const n = Math.floor(Math.random() * LESSON_IMAGE_COUNT) + 1;
+  let n = lessonImageIndex + 1;
+  if (n > LESSON_IMAGE_COUNT) {
+    n = 1;
+  }
+  lessonImageIndex = n;  // ← Add this line
   return `images/lesson${n}.png`;
 }
 
@@ -390,7 +402,9 @@ function startLesson(){
   els.lessonView.classList.remove("hidden");
   exIdx = 0;
   renderExercise(exIdx);
+  updateLessonProgress();
   els.bannerBack.onclick = backToHome;
+
 }
 
 function backToHome(){
@@ -398,6 +412,7 @@ function backToHome(){
   els.homeView.classList.remove("hidden");
   renderRoadmap();
   wireRickroll();
+  document.getElementById("lessonProgress").style.width = "0%";
 }
 
 /* ===== Exercises (choice + match) ===== */
@@ -687,6 +702,7 @@ function nextOrFinish(){
     backToHome();
   } else {
     exIdx++; renderExercise(exIdx);
+    updateLessonProgress();
   }
 }
 

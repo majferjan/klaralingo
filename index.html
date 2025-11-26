@@ -76,8 +76,10 @@
       <!-- Lesson -->
       <section id="lessonView" class="hidden lesson-stage">
         <div class="top-strip">
-          <div class="progress-ghost"></div>
-          <div class="lives">❤ <span id="livesCount">5</span></div>
+          <div class="progress-ghost">
+            <div id="lessonProgress"></div>
+          </div>
+          <div class="lives">❤ <span id="livesCount">∞</span></div>
         </div>
 
         <article class="exercise-core">
@@ -108,7 +110,7 @@
           </div>
           <div class="stat">
             <img class="stat-icon img-var" style="--img-size:40px" src="images/streak.png" alt="Streak" />
-            <span class="stat-text"><span id="streakVal">90</span>-days</span>
+            <span class="stat-text"><span id="streakVal">100</span> days</span>
           </div>
           <div class="stat">
             <img class="stat-icon img-var" style="--img-size:40px" src="images/gem.png" alt="Gems" />

@@ -196,7 +196,16 @@ body{
   flex:1;height:10px;border-radius:999px;
   background:#2a3e45;margin-right:12px;
 }
-.lives{font-weight:900;color:#e9f1f1}
+
+#lessonProgress{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#58cc02,#6ee300);
+  border-radius:999px;
+transition:width 0.5s cubic-bezier(.2,.8,.2,1);
+}
+
+.lives{font-weight:900;color:#e9f1f1;font-size: 1.5rem;}
 
 .exercise-core{
   max-width:820px;margin:0 auto;
@@ -215,15 +224,15 @@ body{
 #exerciseAvatar{
   height:112px;width:auto;
   border-radius:18px;
-  border:1px solid #12323a;
-  background:#092027;
+  background:#0e1b20;
   object-fit:contain;
 }
 .bubble{
   background:#0b2630;color:var(--text);
-  border:1px dashed #2a4952;
+  border:10px #4b8192;
   padding:8px 10px;border-radius:10px;
-  font-size:1rem;
+  font-size:1.3rem;
+  font-weight:700;
 }
 
 .choice-list{
@@ -429,7 +438,7 @@ body{
   display:flex;flex-direction:column;
   gap:10px;
 }
-.rightbar.wide{width:480px}
+.rightbar.wide{width:490px}
 .card{
   background:#0c1f25;
   border:1px solid #1f3a43;
